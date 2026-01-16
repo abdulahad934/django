@@ -1,0 +1,19 @@
+{% extends "auth/auth_base.html" %}
+{% load static %}
+
+{% block form %}
+
+<!-- Optional hidden form -->
+<div class="hidden">
+    {% include "components/form/registration_form.html" %}
+</div>
+
+<!-- Visible form -->
+<div>
+    {% include "components/form/registration_form.html" %}
+</div>
+
+<!-- JS -->
+<script src="{% static 'auth_app/js/auth.js' %}"></script>
+
+{% endblock form %}
