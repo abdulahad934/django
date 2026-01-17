@@ -9,6 +9,7 @@
 
 <!-- Form -->
 <form method="POST" class="space-y-4">
+  {% csrf_token %}
 
   <!-- Username -->
   <div>
@@ -38,18 +39,6 @@
     />
   </div>
 
-  <!-- Remember me + Forgot password -->
-  <div class="flex items-center justify-between text-sm">
-    <label class="flex items-center gap-2">
-      <input type="checkbox" name="remember" class="rounded">
-      Remember me
-    </label>
-
-    <a href="#" class="text-blue-600 hover:underline">
-      Forgot password?
-    </a>
-  </div>
-
   <!-- Button -->
   <button
     type="submit"
@@ -62,7 +51,7 @@
 <!-- Footer -->
 <p class="text-center text-sm text-gray-600 mt-4">
   Don’t have an account?
-  
+  <a href="{% url 'register' %}" class="text-blue-600 font-medium hover:underline">
     Register
   </a>
 </p>

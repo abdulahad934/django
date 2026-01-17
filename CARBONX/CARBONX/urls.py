@@ -17,8 +17,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("auth_app/", include("auth_app.urls")),
+
+    # root URL → login page
+    path("", lambda request: redirect("login")),
 ]
